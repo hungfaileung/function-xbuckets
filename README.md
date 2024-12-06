@@ -44,3 +44,13 @@ $ crossplane xpkg build -f package --embed-runtime-image=runtime
 [python]: https://python.org
 [docker]: https://www.docker.com
 [cli]: https://docs.crossplane.io/latest/cli
+
+
+# Notes
+
+```
+hatch run development
+
+cd example
+crossplane render xr.yaml composition.yaml functions.yaml
+```
