@@ -7,4 +7,4 @@ metadata:
 spec:
   # The CLI ignores this package when using the Development runtime.
   # You can set it to any value.
-  package: xpkg.upbound.io/negz/function-xbuckets:v0.1.0
+  package: kind-registry:5000/function-xbuckets:v0.1.0

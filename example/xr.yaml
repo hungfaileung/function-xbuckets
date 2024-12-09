@@ -1,10 +1,9 @@
-apiVersion: example.crossplane.io/v1
-kind: XBuckets
+apiVersion: example.crossplane.io/v1alpha1
+kind: xbuckets
 metadata:
   name: example-buckets
 spec:
-  region: us-east-2
+  region: us-west-2
   names:
   - crossplane-functions-example-a
   - crossplane-functions-example-b
-  - crossplane-functions-example-c

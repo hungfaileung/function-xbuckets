@@ -4,8 +4,8 @@ metadata:
   name: create-buckets
 spec:
   compositeTypeRef:
-    apiVersion: example.crossplane.io/v1
-    kind: XBuckets
+    apiVersion: example.crossplane.io/v1alpha1
+    kind: xbuckets
   mode: Pipeline
   pipeline:
   - step: create-buckets
