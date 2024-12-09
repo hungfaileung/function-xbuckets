@@ -59,6 +59,8 @@ CHAINSAW=chainsaw KUBECTL=kubectl ./uptest_darwin-arm64 e2e example/xr.yaml --se
 
 CHAINSAW=chainsaw KUBECTL=kubectl CROSSPLANE_CLI=crossplane CROSSPLANE_NAMESPACE=crossplane-system YQ=yq ./uptest_darwin-arm64 e2e example/xr.yaml --test-directory=testtest --setup-script="test/setup.sh"
 
+CHAINSAW=chainsaw KUBECTL=kubectl ./uptest_darwin-arm64 e2e example/xr.yaml --setup-script="test/setup.sh" --render-only --test-directory=test-manifests --default-conditions="Ready,Synced"
+
 
 UPTEST_COMMAND = SKIP_DEPLOY_ARGO=$(SKIP_DEPLOY_ARGO) \
 	KUBECTL=$(KUBECTL) \
