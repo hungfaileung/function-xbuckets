@@ -11,3 +11,6 @@ spec:
   - step: create-buckets
     functionRef:
       name: function-xbuckets
+  - step: automatically-detect-ready-composed-resources
+    functionRef:
+      name: function-auto-ready

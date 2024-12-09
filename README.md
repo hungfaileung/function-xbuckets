@@ -54,3 +54,19 @@ hatch run development
 cd example
 crossplane render xr.yaml composition.yaml functions.yaml
 ```
+
+CHAINSAW=chainsaw KUBECTL=kubectl ./uptest_darwin-arm64 e2e example/xr.yaml --setup-script="test/setup.sh"
+
+CHAINSAW=chainsaw KUBECTL=kubectl CROSSPLANE_CLI=crossplane CROSSPLANE_NAMESPACE=crossplane-system YQ=yq ./uptest_darwin-arm64 e2e example/xr.yaml --test-directory=testtest --setup-script="test/setup.sh"
+
+
+UPTEST_COMMAND = SKIP_DEPLOY_ARGO=$(SKIP_DEPLOY_ARGO) \
+	KUBECTL=$(KUBECTL) \
+	CHAINSAW=$(CHAINSAW) \
+	CROSSPLANE_CLI=$(CROSSPLANE_CLI) \
+	CROSSPLANE_NAMESPACE=$(CROSSPLANE_NAMESPACE) \
+	YQ=$(YQ) \
+	$(UPTEST) e2e $(UPTEST_INPUT_MANIFESTS) \
+	--data-source="${UPTEST_DATASOURCE_PATH}" \
+	--setup-script=$(UPTEST_SETUP_SCRIPT) \
+	$(UPTEST_ARGS)

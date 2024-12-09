@@ -55,3 +55,12 @@ EOF
 kubectl describe xbuckets
 kubectl get managed
 crossplane beta trace xbuckets
+
+cat <<EOF | kubectl apply -f -
+apiVersion: pkg.crossplane.io/v1beta1
+kind: Function
+metadata:
+  name: function-auto-ready
+spec:
+  package: xpkg.upbound.io/crossplane-contrib/function-auto-ready:v0.3.0
+EOF
